@@ -10,4 +10,8 @@ export class DataService {
 
   //etape 2
   constructor(private http : HttpClient) { }
+
+  create(todo : any){
+    return this.http.post(this.url + 'add', todo);
+  }
 }

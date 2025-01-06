@@ -1,5 +1,5 @@
 <div class="input-group mt-5">
-  <input type="text" class="form-control border-3" placeholder="Donne Taske" >
-  <input type="text" class="form-control" placeholder="Priority" >
-  <button class="btn btn-primary">Add</button>
+  <input [(ngModel)]="todo.text" type="text" class="form-control border-3" placeholder="Donne Taske" >
+  <input [(ngModel)]="todo.priority" type="text" class="form-control" placeholder="Priority" >
+  <button class="btn btn-primary" (click)="ajout()">Add</button>
 </div>
