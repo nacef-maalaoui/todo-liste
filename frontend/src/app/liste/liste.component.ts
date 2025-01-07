@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../service/data.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class ListeComponent {
       next: (res) => {
         this.todos = res;
         console.log(this.todos);
+        this.ngOnInit();
       },
       error: (err) => {
         console.log(err);
@@ -34,6 +36,15 @@ export class ListeComponent {
       next: (res) => {
         console.log(res);
         this.ngOnInit();
+
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Your todo has been deleted",
+          showConfirmButton: false,
+          timer: 1500
+        });
+
       },
       error: (err) => {
         console.log(err);
