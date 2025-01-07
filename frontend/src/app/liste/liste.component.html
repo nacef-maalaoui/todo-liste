@@ -1,9 +1,10 @@
 <ul>
 
-    <li>maalaoui nacef</li>
-    <li>maalaoui nacef</li>
-    <li>maalaoui nacef</li>
-    <li>maalaoui nacef</li>
+  @for( todo of todos ; track todo._id ){
+    <li>{{todo.text}} : {{todo.priority}} </li>
+  }
+
+
 
 
 </ul>

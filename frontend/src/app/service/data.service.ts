@@ -14,4 +14,8 @@ export class DataService {
   create(todo : any){
     return this.http.post(this.url + 'add', todo);
   }
+
+  liste(){
+    return this.http.get(this.url + 'liste');
+  }
 }
