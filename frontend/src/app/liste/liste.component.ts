@@ -29,4 +29,16 @@ export class ListeComponent {
 
   }
 
+  delete(id : any){
+    this._data.delete(id).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.ngOnInit();
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
 }

@@ -1,7 +1,7 @@
 <ul>
 
   @for( todo of todos ; track todo._id ){
-    <li>{{todo.text}} : {{todo.priority}} </li>
+    <li>{{todo.text}} : {{todo.priority}}  <button class="btn btn-danger" (click)="delete(todo._id)">X</button></li>
   }
 
 

@@ -18,4 +18,8 @@ export class DataService {
   liste(){
     return this.http.get(this.url + 'liste');
   }
+
+  delete(id : any){
+    return this.http.delete(this.url + 'delete/' + id);
+  }
 }
