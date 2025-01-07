@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../service/data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create',
@@ -21,7 +22,22 @@ export class CreateComponent {
   ajout(){
     this._data.create(this.todo).subscribe({
       next : (res) =>{
-        console.log(res);
+
+
+        this.todo = {
+          text : '',
+          priority : 0
+        }
+
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your todo has been saved",
+          showConfirmButton: false,
+          timer: 1000
+        });
+
       },
       error : (err) =>{
         console.log(err);
